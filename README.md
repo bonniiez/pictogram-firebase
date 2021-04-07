@@ -1,3 +1,19 @@
+# Pictogram
+Pictogram is a web application that implements the usage of Firebase features such as authentication, firebase Cloud Storage, and firebase Cloud Firestore. The application allows user to login, sign up, and upload images to firebase Cloud Storage.  Framer Motion is used for simple animations. 
+
+Screenshots:
+![pictogram-repo](public/images/pictogram-repository.png)
+
+Login          |  Signup
+:-------------------------:|:-------------------------:
+<img src="public/images/pictogram-signin1.png" width="600" >  |  <img src="public/images/pictogram-signup1.png" width="600" >
+
+
+
+<hr/>
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
