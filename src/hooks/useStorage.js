@@ -8,7 +8,6 @@ const useStorage = (file) => {
 
 
     useEffect(() => {
-
         var storageRef = projectStorage.ref();
         var collectionRef = projectFirestore.collection("images");
         var imageRef = storageRef.child(file.name);
@@ -16,7 +15,6 @@ const useStorage = (file) => {
 
         uploadTask.on('state_changed', (snapshot) => {
             let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            // console.log("upload is " + percentage + " %done");
             setProgress(percentage);
         }, (err) => {
             setError(err)
@@ -29,6 +27,9 @@ const useStorage = (file) => {
             })
             setUrl(imgurl);
         })
+
+
+        
     }, [file])
 
     return { progress, url, error }

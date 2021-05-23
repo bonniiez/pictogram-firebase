@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import React, { useState, useEffect } from 'react';
 import {firebaseAuth} from './firebase/config';
 import ImageGrid from './comps/ImageGrid';
@@ -7,8 +8,11 @@ import Modal from '../src/comps/Modal';
 import Login from './Login';
 
 
+
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
+  const [allImages, setAllImages] = useState(null);
+  const [imgId, setImgId] = useState('');
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
@@ -31,12 +35,8 @@ const clearErrors=()=>{
     clearErrors();
     firebaseAuth
       .signInWithEmailAndPassword(email, password)
-      // .then((userCred)=>{
-      //   var user = userCred.user;
-      //   console.log("userCred: ",user);
-      // })
+
       .catch((error)=>{
-        // eslint-disable-next-line default-case
         switch(error.code){
           case "auth/invalid-email":
           case "auth/user-disabled":
@@ -54,14 +54,7 @@ const clearErrors=()=>{
     clearErrors();
     firebaseAuth
     .createUserWithEmailAndPassword(email, password)
-    // .then((userCred)=>{
-    //   var user = userCred.user;
-    //   console.log("userCred-signup: ",user);
-    // })
     .catch((error)=>{
-      // eslint-disable-next-line default-case
-      console.log("signup error",error);
-      // eslint-disable-next-line default-case
       switch(error.code){
         case "auth/email-already-in-use":
         case "auth/invalid-email":
@@ -70,7 +63,6 @@ const clearErrors=()=>{
         case "auth/weak-password":
           setPassError(error.message);
           break;
-
       }
     })
   }
@@ -94,7 +86,7 @@ const clearErrors=()=>{
 useEffect(()=>{
   authListener();
 },[])
-  
+
 
   return (
   
@@ -103,9 +95,8 @@ useEffect(()=>{
       <>
       <Title handleLogout={handleLogout}/>
       <UploadForm />
-      <ImageGrid setSelectedImg={setSelectedImg} />
-      {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}
-      />}
+      <ImageGrid setSelectedImg={setSelectedImg}  allImages={allImages} setAllImages={setAllImages} setImgId={setImgId}/>
+      {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}  imgId={imgId}/>}
       </>):(
         <Login email={email} 
       setEmail={setEmail} 

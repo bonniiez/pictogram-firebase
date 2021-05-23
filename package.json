@@ -2,7 +2,7 @@
   "name": "firegram",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://bonniiez.github.io/pictogram",
+  "homepage": " https://bonniiez.github.io/pictogram-firebase",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

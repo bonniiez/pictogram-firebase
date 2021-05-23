@@ -7,11 +7,8 @@ const UploadForm = () => {
     const [error, setError] = useState(null);
     const allowedTypes = ['image/png', 'image/jpeg'];
 
-
-
     const changeHandler = (e) => {
         let selected = e.target.files[0];
-
         if (selected && allowedTypes.includes(selected.type)) {
             setSelectedFile(selected);
             setError("");
@@ -27,19 +24,15 @@ const UploadForm = () => {
         <form>
             <label className="upload-image-button">
                 <input type="file"
-                    // value={selectedFile}
-                    onChange={changeHandler}
-                />
+                    onChange={changeHandler}/>
                 <span>+</span>
-
             </label>
-
             <div className="output">
                 {error && <div className="error">{error}</div>}
                 {selectedFile && <div > {selectedFile.name}</div>}
                 {selectedFile && <ProgressBar file={selectedFile} setFile={setSelectedFile} />}
             </div>
-        </form >
+        </form>
     )
 }
 
