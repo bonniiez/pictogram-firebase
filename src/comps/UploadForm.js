@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
+import { withStyles } from "@material-ui/core/styles/";
 import ProgressBar from '../comps/ProgressBar';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 
-const UploadForm = () => {
+
+const styles = (theme)=>({
+    hoverColor:{
+        '&:hover': {
+            backgroundColor: "rgba(240,190,190, 0.3)",
+            borderRadius: "60%",
+          }
+    }
+})
+
+const UploadForm = (props) => {
+    const{classes} = props;
     const [selectedFile, setSelectedFile] = useState(null);
     const [error, setError] = useState(null);
     const allowedTypes = ['image/png', 'image/jpeg'];
@@ -25,7 +38,7 @@ const UploadForm = () => {
             <label className="upload-image-button">
                 <input type="file"
                     onChange={changeHandler}/>
-                <span>+</span>
+                <AddCircleOutlineIcon className={classes.hoverColor} style={{color:"#efb6b2"}} fontSize="large" />
             </label>
             <div className="output">
                 {error && <div className="error">{error}</div>}
@@ -36,4 +49,4 @@ const UploadForm = () => {
     )
 }
 
-export default UploadForm;
+export default withStyles(styles)(UploadForm);

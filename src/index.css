@@ -149,7 +149,7 @@ label input {
   width: 0;
   opacity: 0;
 }
-label.upload-image-button {
+/* label.upload-image-button {
   display: block;
   width: 30px;
   height: 30px;
@@ -160,11 +160,11 @@ label.upload-image-button {
   color: var(--primary);
   font-weight: bold;
   font-size: 24px;
-}
-label:hover {
+} */
+/* label:hover {
   background: var(--primary);
   color: white;
-}
+} */
 .output {
   height: 60px;
   font-size: 0.8rem;
