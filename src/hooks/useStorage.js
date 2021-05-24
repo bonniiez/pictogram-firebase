@@ -27,14 +27,10 @@ const useStorage = (file) => {
             })
             setUrl(imgurl);
         })
-
-
-        
     }, [file])
 
     return { progress, url, error }
 
 }
-
 
 export default useStorage;

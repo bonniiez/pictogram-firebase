@@ -94,10 +94,10 @@ button {
 
 .btnContainer p {
   text-align: right;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
-.btnContainer span {
-  color: rgb(233, 233, 87);
+.loginSwitch{
+  color: rgb(20, 11, 156);
   cursor: pointer;
 }
 

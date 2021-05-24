@@ -20,7 +20,6 @@ const ImageGrid = ({ setSelectedImg, setImgId }) => {
           whileHover={{ opacity: 1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setImgAttributes(doc) 
-        //   setSelectedImg(doc.url);
           }
         >
           <motion.img

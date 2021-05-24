@@ -7,11 +7,8 @@ import UploadForm from './comps/UploadForm';
 import Modal from '../src/comps/Modal';
 import Login from './Login';
 
-
-
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
-  const [allImages, setAllImages] = useState(null);
   const [imgId, setImgId] = useState('');
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
@@ -24,18 +21,17 @@ const clearInputs = ()=>{
   setEmail("");
   setPass("");
 }
-
 const clearErrors=()=>{
   setEmailError("");
   setPassError("");
 
 }
-
   const handleLogin = ()=>{
+    console.log("handle login email" + email);
+    console.log("handle login email" + password);
     clearErrors();
     firebaseAuth
       .signInWithEmailAndPassword(email, password)
-
       .catch((error)=>{
         switch(error.code){
           case "auth/invalid-email":
@@ -87,7 +83,6 @@ useEffect(()=>{
   authListener();
 },[])
 
-
   return (
   
     <div className="App">
@@ -95,8 +90,8 @@ useEffect(()=>{
       <>
       <Title handleLogout={handleLogout}/>
       <UploadForm />
-      <ImageGrid setSelectedImg={setSelectedImg}  allImages={allImages} setAllImages={setAllImages} setImgId={setImgId}/>
-      {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}  imgId={imgId}/>}
+      <ImageGrid setSelectedImg={setSelectedImg} setImgId={setImgId}/>
+      {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} imgId={imgId}/>}
       </>):(
         <Login email={email} 
       setEmail={setEmail} 
