@@ -56,7 +56,7 @@ const Login = (props) => {
   } = props;
 
   return (
-    <Container component="login" maxWidth="xs">
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className="loginContainer">
       <div className={classes.paper}>

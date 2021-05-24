@@ -101,12 +101,12 @@ button {
   cursor: pointer;
 }
 
-.logout-button {
+/* .logout-button {
   float: right;
   width: 100px;
   padding: 10px;
   margin: 10px;
-}
+} */
 
 .errorMsg{
   color:red;
