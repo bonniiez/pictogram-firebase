@@ -27,8 +27,6 @@ const clearErrors=()=>{
 
 }
   const handleLogin = ()=>{
-    console.log("handle login email" + email);
-    console.log("handle login email" + password);
     clearErrors();
     firebaseAuth
       .signInWithEmailAndPassword(email, password)

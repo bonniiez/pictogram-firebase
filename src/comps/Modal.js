@@ -22,7 +22,7 @@ const Modal = ({
           .doc(imgId) 
           .delete()
           .then((res) => {
-              // TODO: use Toastr for notifications
+        // TODO: use Material UI Snackbar component for notifications
         console.log("Picture is deleted successfully!");
       })
       .catch((error) => {
