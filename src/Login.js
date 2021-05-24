@@ -63,9 +63,12 @@ const Login = (props) => {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Login
-        </Typography>
+        <div>{hasAccount?  <Typography component="h1" variant="h5">
+          Log In
+        </Typography>:  <Typography component="h1" variant="h5">
+          Sign Up
+        </Typography>}</div>
+       
         <TextField
           variant="outlined"
           margin="normal"
