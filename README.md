@@ -3,6 +3,7 @@ Pictogram is a web application that implements the usage of Firebase features su
 
 Screenshots:
 ![pictogram-repo](public/images/pictogram-repository.png)
+![pictogram-img-view](public/images/pictogram-img-viewer.png)
 
 Login          |  Signup
 :-------------------------:|:-------------------------:
