@@ -1,4 +1,7 @@
 # Pictogram
+
+Deployed project [here](https://bonniiez.github.io/pictogram-firebase/).
+
 Pictogram is a web application that implements the usage of Firebase features such as authentication, firebase Cloud Storage, and firebase Cloud Firestore. The application allows user to login, sign up, upload images and remove images from firebase Cloud Storage.  Framer Motion is used for simple animations. 
 
 Screenshots:
