@@ -59,87 +59,103 @@ const Login = (props) => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className="loginContainer">
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <div>{hasAccount?  <Typography component="h1" variant="h5">
-          Log In
-        </Typography>:  <Typography component="h1" variant="h5">
-          Sign Up
-        </Typography>}</div>
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          id="email"
-          label="User Name"
-          onChange={(e) => setEmail(e.target.value)}
-          error={emailError? true: false}
-          helperText ={emailError}
-        />
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          id="password"
-          label="Password"
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          error={passwordError? true: false}
-          helperText={passwordError}
-        />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <div>
+            {hasAccount ? (
+              <Typography component="h1" variant="h5">
+                Log In
+              </Typography>
+            ) : (
+              <Typography component="h1" variant="h5">
+                Sign Up
+              </Typography>
+            )}
+          </div>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="User Name"
+            onChange={(e) => setEmail(e.target.value)}
+            error={emailError ? true : false}
+            helperText={emailError}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="password"
+            label="Password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            error={passwordError ? true : false}
+            helperText={passwordError}
+          />
 
-        <div >
-          {hasAccount ? (
-            <>
-              <Button
-							type="submit"
-							fullWidth
-							variant="contained"
-							color="primary"
-							className={classes.submit}
-							onClick={handleLogin}
-							disabled={ !email || !password}
-						>
-							Sign In		
-						</Button>
-              <Grid container>
-							<Grid item>
-                <p>
-                Don't have an account?{" "}
-                <span className="loginSwitch" onClick={() => setHasAccount(!hasAccount)}>Sign up</span>
-              </p> 
-							</Grid>
-						</Grid>
-            </>
-          ) : (
-            <div>
-              <Button
-							type="submit"
-							fullWidth
-							variant="contained"
-							color="primary"
-							className={classes.submit}
-							onClick={handleSignup}
-							disabled={ !email || !password}
-						>
-							Sign Up		
-						</Button>
-              <Grid container>
-							<Grid item>
-              <p>
-                Have an account?{" "}
-                <span className="loginSwitch" onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
-              </p> 
-							</Grid>
-						</Grid>
-            </div>
-          )}
+          <div>
+            {hasAccount ? (
+              <>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                  onClick={handleLogin}
+                  disabled={!email || !password}
+                >
+                  Sign In
+                </Button>
+                <Grid container>
+                  <Grid item>
+                    <p>
+                      Don't have an account?{" "}
+                      <span
+                        className="loginSwitch"
+                        onClick={() => setHasAccount(!hasAccount)}
+                      >
+                        Sign up
+                      </span>
+                    </p>
+                  </Grid>
+                </Grid>
+              </>
+            ) : (
+              <div>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                  onClick={handleSignup}
+                  disabled={!email || !password}
+                >
+                  Sign Up
+                </Button>
+                <Grid container>
+                  <Grid item>
+                    <p>
+                      Have an account?{" "}
+                      <span
+                        className="loginSwitch"
+                        onClick={() => setHasAccount(!hasAccount)}
+                      >
+                        Sign in
+                      </span>
+                    </p>
+                  </Grid>
+                </Grid>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
       </div>
     </Container>
   );
