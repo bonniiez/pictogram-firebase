@@ -66,7 +66,6 @@ const clearErrors=()=>{
   }
 
   const authListener=()=>{
-    
     firebaseAuth.onAuthStateChanged((user)=>{
       if(user){
         clearInputs();

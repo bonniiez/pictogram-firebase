@@ -68,7 +68,6 @@ const Login = (props) => {
         </Typography>:  <Typography component="h1" variant="h5">
           Sign Up
         </Typography>}</div>
-       
         <TextField
           variant="outlined"
           margin="normal"

@@ -4,8 +4,7 @@ import ProgressBar from '../comps/ProgressBar';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 
-
-const styles = (theme)=>({
+const styles = ()=>({
     hoverColor:{
         '&:hover': {
             backgroundColor: "rgba(240,190,190, 0.3)",
@@ -29,7 +28,6 @@ const UploadForm = (props) => {
         } else {
             setSelectedFile(null)
             setError("Please select an image file (png/jpeg) ")
-
         }
     }
 
