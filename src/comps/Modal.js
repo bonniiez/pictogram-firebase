@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/styles/";
-import { Typography } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Container from "@material-ui/core/Container";
@@ -8,7 +7,6 @@ import Box from "@material-ui/core/Box";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-import Paper from "@material-ui/core/Paper";
 
 import { motion } from "framer-motion";
 import { projectFirestore } from "../firebase/config";
@@ -25,15 +23,6 @@ const styles = (theme) => ({
     background: "#ff9800",
     fontWeight: 600,
   },
-  // paper: {
-  //   display: "flex",
-  //   flexWrap: "wrap",
-  //   "& > *": {
-  //     margin: theme.spacing(1),
-  //     width: theme.spacing(16),
-  //     height: theme.spacing(3),
-  //   },
-  // },
 });
 
 const Modal = (props) => {
@@ -80,12 +69,6 @@ const Modal = (props) => {
           initial={{ y: "-100vh" }}
           animate={{ y: 0 }}
         />
-        {/* <div className={classes.paper}>
-          <Paper variant="outlined" elevation={3}>
-            Caption Here
-          </Paper>
-        </div> */}
-
         <Box mr={2}>
           <Button
             className={classes.width}
@@ -93,7 +76,6 @@ const Modal = (props) => {
             variant="contained"
             color="secondary"
             startIcon={<DeleteIcon />}
-            // m={5}
             onClick={handleDeleteImageFromFirebase}
           >
             Delete
